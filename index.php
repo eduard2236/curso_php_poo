@@ -1,11 +1,20 @@
-<h1>bienvenidos a mi web con MVC</h1>
 <?php
 require_once'autoload.php';
+require_once'config/parameters.php';
+require_once'view/layout/header.php';
+require_once'view/layout/aside.php';
 
+function show_error(){
+    $error = NEW errorController();
+    $error->index();
+}
 if(isset($_GET['controller'])){
     $nombre_controlador = $_GET['controller'].'Controller';
+}elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
+    $nombre_controlador = controller_default;
 }else{
-    echo "la pagina no existe";
+    show_error();
+    require_once'view/layout/footer.php';
     exit();
 }
 
@@ -16,12 +25,15 @@ if(class_exists($nombre_controlador)){
     if(isset($_GET['action']) && method_exists($controlador,$_GET['action'])){
         $action = $_GET['action'];
         $controlador->$action();
-    
+    }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
+        $action_default = action_default;
+        $controlador->$action_default();
     }else{
-        echo " la pagina que buscas no existe";
+       show_error();
     }
     
 }else{
-    echo "la pagina no existe";
+    show_error();
 }
+require_once'view/layout/footer.php';
 ?>
