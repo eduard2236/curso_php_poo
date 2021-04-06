@@ -216,6 +216,25 @@ input[type="email"]:focus{
      text-decoration: none;
      color: white !important;
  }
+ .alert_green{
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: green;
+    box-shadow: 0px 1px 3px #ccc;
+    margin-bottom: 15px;
+    border-radius: 2px;
+ }
+
+ .alert_red{
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    background-color: red;
+    box-shadow: 0px 1px 3px #ccc;
+    margin-bottom: 15px;
+    border-radius: 2px;
+ }
 /*Productos*/
 
 .product{
