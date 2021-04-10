@@ -1,22 +1,39 @@
  <!--SIDEBAR-->
  <aside id="lateral">
-            <div id="login" class="block_aside">
-                <h3>Entrar a la web</h3>
-                <form>
-                    <label for="email">Email</label>
-                    <input type="email" name="email"/>
-                    
-                    <label for="password">Contraseña</label>
-                    <input type="password" name="password"/>
-                    
-                    <input type="submit" value="Ingresar"/>
-                    <ul>
-                           <li><a href="#">mis pedidos</a></li>
-                           <li><a href="#">gestionar pedidos</a></li>
-                           <li><a href="#">gestionar categorias</a></li>
-                    </ul>
-                </form>
-            </div>
-        </aside>
-        <!--central content-->
-<div id="central">
+    
+     <div id="login" class="block_aside">
+         <?php if (!isset($_SESSION['identity'])) : ?>
+             <h3>Entrar a la web</h3>
+             <?php if (isset($_SESSION['error_login'])) : ?>
+            <strong class="alert_red"> <?= $_SESSION['error_login']?> </strong>
+            <?php endif;?>
+             <form action="<?=base_url?>usuario/login" method="POST">
+                 <label for="email">Email</label>
+                 <input type="email" name="email"/>
+
+                 <label for="password">Contraseña</label>
+                 <input type="password" name="password" />
+
+                 <input style="display: inline-block;" type="submit" value="Ingresar" />
+                 <input style="display: inline-block; margin-left: 45px;" type="button" value="Registrarse" onClick="location.href='<?= base_url ?>usuario/registro'" />
+                
+             </form>
+         <?php else : ?>
+             <h3><?= $_SESSION['identity']->nombre ?> <?= $_SESSION['identity']->apellidos ?></h3>
+         <?php endif; ?>
+         <ul>
+         <?php if(isset($_SESSION['admin'])):?>
+             <li><a href="#">gestionar categorias</a></li>
+             <li><a href="#">gestionar productos</a></li>
+             <li><a href="#">gestionar pedidos</a></li>
+        <?php endif; ?>
+        <?php if(isset($_SESSION['identity'])):?>
+             <li><a href="#">mis pedidos</a></li>
+             <li><a href="<?=base_url?>usuario/logout">Cerrar Session</a></li>
+        <?php endif; ?>
+         </ul>
+         <?php utils::deleteSession('error_login'); ?>
+     </div>
+ </aside>
+ <!--central content-->
+ <div id="central">

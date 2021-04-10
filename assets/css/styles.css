@@ -198,7 +198,7 @@ input[type="email"]:focus{
  input[type="button"],
  input[type="submit"],
  button, .button{
-    display: block;
+    display: inline-block;
     border-radius: 2px;
     width: auto;
     padding: 5px;
@@ -234,6 +234,12 @@ input[type="email"]:focus{
     box-shadow: 0px 1px 3px #ccc;
     margin-bottom: 15px;
     border-radius: 2px;
+    text-align: center;
+ }
+
+ .bureg{
+     display: inline-block !important;
+     
  }
 /*Productos*/
 
