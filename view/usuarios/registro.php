@@ -19,6 +19,7 @@
 <label for="password">Password</label>
 <input type="password" name="password" required/>
 
-<input type="submit"  value="Registrar">
-
+<input style="display: inline-block; width: 10%" type="submit"  value="Registrar">
+<button style="display: inline-block; width: 10%" type="reset" class="btn btn-default">limpiar</button>
+<input style="display: inline-block;  width: 10%" type="button" value="Regresar" onClick="location.href='<?= base_url ?>'" />
 </form>

@@ -198,7 +198,7 @@ input[type="email"]:focus{
  input[type="button"],
  input[type="submit"],
  button, .button{
-    display: inline-block;
+    display: block;
     border-radius: 2px;
     width: auto;
     padding: 5px;
@@ -216,6 +216,14 @@ input[type="email"]:focus{
      text-decoration: none;
      color: white !important;
  }
+
+ .button-small{
+     width: 120px;
+     text-align: center;
+     margin-bottom: 20px;
+     background: #09b133;
+     border-radius: 4px;
+ }
  .alert_green{
     padding: 5px;
     font-size: 14px;
@@ -224,6 +232,7 @@ input[type="email"]:focus{
     box-shadow: 0px 1px 3px #ccc;
     margin-bottom: 15px;
     border-radius: 2px;
+    margin-bottom: 20px;
  }
 
  .alert_red{
@@ -232,14 +241,19 @@ input[type="email"]:focus{
     color: white;
     background-color: red;
     box-shadow: 0px 1px 3px #ccc;
-    margin-bottom: 15px;
+    margin-bottom: 15px !important;
     border-radius: 2px;
     text-align: center;
  }
+ table{
+     width: 100%;
+     border: 1px solid #555;
+     text-align: center;
 
- .bureg{
-     display: inline-block !important;
-     
+ }
+ td{
+     border-top: 1px solid #ccc;
+     padding: 2px;
  }
 /*Productos*/
 

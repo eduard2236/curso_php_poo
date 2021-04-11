@@ -7,5 +7,20 @@
             }
             return $name;
         }
+
+        public static function isAdmin(){
+            if(!isset($_SESSION['admin'])){
+                header("location:".base_url);
+            }else{
+                return true;
+            }
+        }
+
+        public static function showCategorias(){
+            require_once 'models/categoria.php';
+            $categoria = new categoria();
+            $categorias = $categoria->getAll();
+            return $categorias;
+        }
     }
 ?>
