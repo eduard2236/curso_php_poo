@@ -25,7 +25,7 @@
                     }else{
                         $nombre_validado = false;
                         $errores['nombre'] = "el nombre no es valido no debe contener numeros";
-                        $_SESSION['error_num'] = "error las categoria se ha escrito incorrectamente";
+                        $_SESSION['categoria'] = "failed_num";
                         header("location:".base_url."categoria/crear");
                         die;
                     }
@@ -34,13 +34,13 @@
                     $categoria->setNombre($_POST['nombre']);
                     $categoria->save();
                     if ($categoria){
-                        $_SESSION['completado'] = "la categoria se ha insertado correctamente";
+                        $_SESSION['categoria'] = "complete";
                         }else{
-                            $_SESSION['error_alguardar'] = "fallo al guardar en la BD";
+                            $_SESSION['categoria'] = "failed";
                         }
             
                     }else{
-                        $_SESSION['errores'] = $errores;
+                        $_SESSION['categoria'] = "failed";
                 }
             
 

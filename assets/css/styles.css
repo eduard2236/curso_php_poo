@@ -167,6 +167,7 @@ label,
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 select{
     display: block;
     width: 95%;
@@ -176,11 +177,13 @@ select{
 label{
     display: block;
     margin-top: 10px;
+    margin-top: 10px;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="number"],
 select{
     border: 1px solid #c9c9c9;
     box-shadow: 0px 0px 2px #ccc inset;
@@ -194,6 +197,12 @@ input[type="password"]:focus,
 input[type="email"]:focus{
     border: 1px solid #1579b5;
     color: black; 
+}
+.form{
+    width: 50% ;
+}
+textarea{
+    width: 95%;
 }
  input[type="button"],
  input[type="submit"],
@@ -224,6 +233,18 @@ input[type="email"]:focus{
      background: #09b133;
      border-radius: 4px;
  }
+ .button-green{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #84b7ec;
+     width: 50%;
+ }
+
+ .button-red{
+     background: #a12211;
+    border: 1px solid #cf1717;
+    width: 50%;
+ }
  .alert_green{
     padding: 5px;
     font-size: 14px;
@@ -245,15 +266,22 @@ input[type="email"]:focus{
     border-radius: 2px;
     text-align: center;
  }
+
  table{
      width: 100%;
      border: 1px solid #555;
      text-align: center;
-
+     margin-top: 15px;
  }
+
  td{
      border-top: 1px solid #ccc;
      padding: 2px;
+     text-align: center;
+ }
+ .alinear{
+    margin-left: 20px;
+    margin-right: -40px;
  }
 /*Productos*/
 
