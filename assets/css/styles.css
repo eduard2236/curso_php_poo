@@ -184,6 +184,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
+textarea,
 select{
     border: 1px solid #c9c9c9;
     box-shadow: 0px 0px 2px #ccc inset;
@@ -203,10 +204,16 @@ input[type="email"]:focus{
 }
 textarea{
     width: 95%;
+    color: gray;
+}
+
+.resize{
+    width: 100px;
 }
  input[type="button"],
  input[type="submit"],
- button, .button{
+ button,
+.button{
     display: block;
     border-radius: 2px;
     width: auto;

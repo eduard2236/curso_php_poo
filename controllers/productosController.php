@@ -38,6 +38,7 @@
                     $producto->setStock($stock);
                     $producto->setCategoriasId($categoria);
                     //guardar la imagen
+                    if(isset($_FILES['imagen'])){
                     $file = $_FILES['imagen'];
                     $filename = $_FILES['imagen']['name'];
                     $mimetype = $_FILES['imagen']['type'];
@@ -51,8 +52,14 @@
                         move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
                         $producto->setImagen($filename);
                     }
-
+                }
+                    if(isset($_GET['id'])){
+                        $id = $_GET['id'];
+                        $save = $producto->setId($id);
+                        $producto->update();
+                    }else{
                     $save = $producto->save();
+                    }
                     if($save){
                         $_SESSION['producto'] = "complete";
                     }else{
@@ -68,8 +75,21 @@
             header("location:".base_url.'productos/gestion');
         }
 
-        public function editar(){
-            var_dump($_GET);
+        public function edit(){
+            utils::isAdmin();
+            if(isset($_GET['id'])){
+                $edit = true; 
+                $id = $_GET['id'];
+
+                $producto = new producto();
+                $producto->setId($id);
+                $pro = $producto->getOne();
+            require_once'view/productos/crear.php';;
+
+            }else{
+                header("location:".base_url."productos/gestion");  
+            }
+            
         }
 
         public function eliminar(){

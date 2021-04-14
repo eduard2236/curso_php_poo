@@ -28,7 +28,7 @@
             <td><?= $pro->stock; ?></td>
             <td>
                 <div class="alinear">
-                <a href="<?=base_url?>productos/editar&id=<?=$pro->id?>" class="button button-green">Editar</a>
+                <a href="<?=base_url?>productos/edit&id=<?=$pro->id?>" class="button button-green">Editar</a>
                 <a href="<?=base_url?>productos/eliminar&id=<?=$pro->id?>" class="button button-red">Eliminar</a>
                 </div>
             </td>

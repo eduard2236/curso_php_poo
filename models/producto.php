@@ -207,9 +207,30 @@ class producto
         return $productos;   
     }
 
+    public function getOne(){
+        $producto = $this->db->query("SELECT * FROM productos WHERE id = {$this->getId()}");
+        return $producto->fetch_object();
+    }
+
     public function save(){
     
         $sql = "INSERT INTO productos VALUES(NULL,{$this->getCategoriasId()},'{$this->getNombre()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()},NULL,CURDATE(),'{$this->getImagen()}')";
+        $save = $this->db->query($sql); 
+        $result= false;
+        if($save){
+            $result= true;
+        }
+        return $result;
+    }
+
+    public function update(){
+    
+        $sql = "UPDATE productos SET categorias_id={$this->getCategoriasId()}, nombre='{$this->getNombre()}', descripcion='{$this->getDescripcion()}', precio={$this->getPrecio()},stock={$this->getStock()},fecha=CURDATE()";
+        if($this->getImagen() != null){
+            $sql .= ",imagen='{$this->getImagen()}' WHERE id = {$this->getId()}";
+        }else{
+            $sql .="WHERE id = {$this->getId()}";
+        }
         $save = $this->db->query($sql); 
         $result= false;
         if($save){
