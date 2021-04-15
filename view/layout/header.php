@@ -9,11 +9,11 @@
 </head>
 <body>  
         <!--HEADER-->
-        <div id="container">
+        <div id="container" >
         <header id="header">
-            <div id="logo" >
-                <img src="<?=base_url?>assets/img/camiseta.png" alt="logo de camiseta" />
-                <a href="<?=base_url?>"> Tienda de camisetas </a>
+            <div id="logo"  >
+                <img src="<?=base_url?>assets/img/logoblack.png" alt="logo de camiseta" />
+                <a href="<?=base_url?>"> Eduard Store </a>
             </div>
         </header>
 

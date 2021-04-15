@@ -12,7 +12,7 @@ a{
     color: cornflowerblue;
 }
 a:visited{
-   color:  cornflowerblue;
+   color:  rgb(0, 55, 158);
 }
 
 a:hover{
@@ -32,25 +32,26 @@ a:hover{
 }
 #logo{
     padding: 20px;
-    margin-left: 20px;
+    margin-left: 80px;
+    border-radius: 10px #555;
 }
 
 #logo a{
     float: left;
-    font-size: 40px;
-    letter-spacing: 4px;
-    font-family: "Open sans", Helvetica,Arial;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-family: 'Garamond','Times New Roman', Helvetica,Arial;
     text-transform: uppercase;
-    color: cornflowerblue;
+    color: rgb(11, 19, 9);
     font-weight: bold;
     text-decoration: none;
-    margin-top: 18px;
-    margin-left: 25px;
-    text-shadow: 0px 2px 1px #222222;
+    margin-top: 25px;
+    margin-left: 60px;
+    text-shadow: 0px 2px 1px #1e852d;
     transition: all 300ms;
 }
 #logo a:hover{
-    text-shadow: 0px 2px 1px #222222, 0px 0px 4px #01b1ea;
+    text-shadow: 0px 2px 1px #222222, 0px 0px 4px #13db4f;
 }
 
 #logo img{
@@ -129,15 +130,26 @@ a:hover{
     border-bottom: 2px solid #01B1EA;
 }
 #lateral ul{
+    
     margin-top: 20px;
     margin-bottom: 20px;
 }
+@counter-style two-apples {
+    system: cyclic;
+    symbols: "\270E" "\270E" "\270E" "\2690" "\261A";
+    suffix: " ";
+  }
 
 #lateral ul li{
-    list-style: square ;
+    
+    list-style-type: two-apples;
     margin-left: 25px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+#lateral a{
+    text-decoration: none;
 }
 /*contenido central*/
 #central{
@@ -298,20 +310,22 @@ textarea{
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .product img{
-    width: 100px;
+    height: 170px;
     margin-top: 5px;
 }
 .product h2{
     font-size: 18px;
     margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .product p{
     font-weight: bold;
-    color: #555;
+    color: #551;
     margin-top: 5px;
 }
 

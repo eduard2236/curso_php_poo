@@ -1,24 +1,17 @@
 <!--central content-->
 
-            <h1>productos destacados</h1>
+            <h1>algunos de nuestros productos</h1>
+                <?php while($produ = $productos->fetch_object()) : ?>
                 <div class="product">
-                    <img src="assets/img/camiseta.png">
-                    <h2>camiseta suave</h2>
-                    <p>30 dolares</p>
+                    <?php if($produ->imagen != null) : ?>
+                    <img src="<?=base_url?>./uploads/images/<?=$produ->imagen?>" alt="imagen <?=$produ->nombre?>" >
+                    <?php else: ?>
+                        <img src="<?=base_url?>assets/img/camiseta.png" alt="imagen <?=$produ->nombre?>" >
+                    <?php endif ;?>
+                    <h2><?= $produ->nombre ?></h2>
+                    <p><?= $produ->precio?></p>
                     <a href="#" class="button">Comprar</a>
                 </div>
-
-                <div class="product">
-                    <img src="assets/img/camiseta.png">
-                    <h2>camiseta suave</h2>
-                    <p>30 dolares</p>
-                    <a href="#"class="button">Comprar</a>
-                </div>
-                <div class="product">
-                    <img src="assets/img/camiseta.png">
-                    <h2>camiseta suave</h2>
-                    <p>30 dolares</p>
-                    <a href="#"class="button">Comprar</a>
-                </div>
-
+                <?php endwhile ;?>
+                
             

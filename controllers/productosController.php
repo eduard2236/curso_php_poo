@@ -3,6 +3,8 @@
 
     class productosController{
         public function index(){
+            $producto = new producto();
+            $productos = $producto->getRandon(6);
             //renderizar vista
             include'view/productos/destacados.php';
         }
