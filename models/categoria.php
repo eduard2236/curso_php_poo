@@ -38,5 +38,16 @@
                 return $result;
             }
         }
+
+        public function getCategoria(){
+            $producto = $this->db->query("SELECT p.nombre, p.precio, p.imagen , c.nombre as 'categoria' FROM productos p INNER JOIN categorias c on p.categorias_id = c.id where c.id= '{$this->getId()}'");
+            return $producto;
+        }
+
+        public function getOne(){
+            $categoria = $this->db->query("SELECT nombre FROM categorias WHERE id = {$this->getId()}");
+            return $categoria->fetch_object();
+        }
+
     }
 ?>

@@ -11,6 +11,12 @@
 <?php elseif(isset($_SESSION['producto']) && $_SESSION['producto'] == "fallido"): ?>
     <strong class="alert_red"> Falla al eliminar el producto</strong>
 <?php endif; ?>
+
+<?php if (isset($_SESSION['producto']) && $_SESSION['producto'] == "editado") : ?>
+    <strong class="alert_green"> Se ha editado el producto correctamente </strong>
+<?php elseif(isset($_SESSION['producto']) && $_SESSION['producto'] == "no_editado"): ?>
+    <strong class="alert_red"> Falla al editar el producto</strong>
+<?php endif; ?>
 <table border="1" >
     <tr>
         <th>ID</th>

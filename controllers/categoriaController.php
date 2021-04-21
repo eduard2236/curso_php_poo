@@ -14,6 +14,23 @@
             require_once'view/categorias/crear.php';
         }
 
+        public function ver(){
+
+            if(isset($_GET['id'])){
+                $id= $_GET['id'];
+                $categoria = new categoria();
+                $categoria->setId($id);
+                $categori = $categoria->getOne();
+                $producto = new categoria();
+                $producto->setId($id);
+                $productos = $producto->getCategoria();
+                require_once 'view/categorias/ver.php';
+            }else{
+                header("location:".base_url);
+            }
+            
+        }
+
         public function save(){
             utils::isAdmin();
             $errores = array();
