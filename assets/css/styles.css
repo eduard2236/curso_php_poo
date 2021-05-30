@@ -225,7 +225,7 @@ textarea{
  input[type="button"],
  input[type="submit"],
  button,
-.button{
+.button,.button2{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -243,6 +243,15 @@ textarea{
      background: rgb(74, 153, 98);
      text-decoration: none;
      color: white !important;
+ }
+
+ .button2{
+    background: rgb(49, 120, 153);
+    text-decoration: none;
+    color: white !important;
+    width: 39%;
+    text-align: center;
+    
  }
 
  .button-small{
@@ -313,6 +322,15 @@ textarea{
     margin-bottom: 20px;
 }
 
+.product a{
+    color: black;
+    text-decoration: none;
+}
+
+.product a:hover{
+    color: #555;
+}
+
 .product img{
     height: 170px;
     margin-top: 5px;
@@ -320,13 +338,52 @@ textarea{
 .product h2{
     font-size: 18px;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .product p{
     font-weight: bold;
     color: #551;
     margin-top: 5px;
+}
+
+#product-detail{
+    width: 100%;
+
+}
+
+#product-detail .image{
+    display: block;
+    width: 47%;
+    float: left;
+  
+}
+
+#product-detail img{
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+#product-detail .data{
+    
+    width: 50%;
+    float: right;
+    
+}
+#product-detail .description{
+    
+    margin-bottom: 10px;
+}
+#product-detail .price{
+    
+   margin-bottom: 10px;
+}
+
+#product-detail .button{
+    width: 150px;
+    text-align: center;
+
 }
 
 /*pie de pagina*/
