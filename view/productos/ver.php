@@ -20,3 +20,4 @@
           <h1>No hay productos disponibles en esta categoria </h1>
       <?php endif; ?>
   </div>
+  

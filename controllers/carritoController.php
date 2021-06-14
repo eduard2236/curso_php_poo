@@ -3,8 +3,8 @@
     class carritoController{
 
         public function index(){
-            var_dump($_SESSION['carrito']);
-            echo "controlador pedidos, accion index";
+            $carrito = $_SESSION['carrito'];
+            require_once'view/carrito/index.php';
         }
 
         public function add(){
@@ -15,12 +15,22 @@
             }
 
             if(isset($_SESSION['carrito'])){
+                $counter = 0;
+                foreach($_SESSION['carrito'] as $indice => $elemento){
+                    if($elemento['id_producto'] == $producto_id){
+                        $_SESSION['carrito'][$indice]['unidades']++;
+                        $counter++;
+                    }
+                }
 
-            }else{
+            }
+                if(!isset($counter) || $counter == 0){
                 //conseguir producto
                 $producto = new producto();
                 $producto->setId($producto_id);
                 $producto = $producto->getOne();
+
+                /*añadir al carrito */
                 if(is_object($producto)){
                     $_SESSION['carrito'][] = array(
                         "id_producto"=> $producto->id,

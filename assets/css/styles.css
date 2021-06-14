@@ -147,6 +147,28 @@ a:hover{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.carrito{
+    display: block;
+    width: 90%;
+    margin-left: 5px auto;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+.carrito ul{
+    margin-top: -14px !important;
+    margin-bottom: -18px !important;
+}
+@counter-style carrito-2 {
+    system: cyclic ;
+    symbols: "\1F6D2" ;
+    suffix: " " ;
+  }
+
+.carrito ul li {
+    list-style-type: carrito-2 !important;
+    margin-bottom: 4px !important;
+    margin-left: 15px !important;
+}
 
 #lateral a{
     text-decoration: none;
@@ -225,7 +247,7 @@ textarea{
  input[type="button"],
  input[type="submit"],
  button,
-.button,.button2{
+.button,.button2,.button3{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -251,6 +273,15 @@ textarea{
     color: white !important;
     width: 39%;
     text-align: center;
+    
+ }
+ .button3{
+    background: rgb(49, 120, 153);
+    text-decoration: none;
+    color: white !important;
+    width: 20%;
+    text-align: center;
+    margin-top: 30px;
     
  }
 
@@ -297,7 +328,7 @@ textarea{
 
  table{
      width: 100%;
-     border: 1px solid #555;
+     border-bottom: 1px solid #ccc;
      text-align: center;
      margin-top: 15px;
  }
@@ -310,6 +341,37 @@ textarea{
  .alinear{
     margin-left: 20px;
     margin-right: -40px;
+ }
+ /*contact*/
+ #contact{
+     margin-top: 20px;
+     margin-bottom: 20px;
+     font-family: 'Times New Roman', Times, serif;
+     font-size: medium;
+ }
+
+ #contact h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+ }
+ /*carrito */
+ .carrito-precio{
+     float: right;
+     width: 350px;
+ }
+ .carrito-precio h3{
+     margin-top: 15px;
+     display: block;
+     float: left;
+
+ }
+ .button-pedido{
+     display: block;
+     width: 150px;
+     float: right;
+     text-align: center;
  }
 /*Productos*/
 
@@ -334,6 +396,12 @@ textarea{
 .product img{
     height: 170px;
     margin-top: 5px;
+}
+
+.img_carrito{
+    height: 70px;
+    display: block;
+    margin: 10px auto;
 }
 .product h2{
     font-size: 18px;

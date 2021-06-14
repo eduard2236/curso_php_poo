@@ -1,6 +1,16 @@
  <!--SIDEBAR-->
  <aside id="lateral">
-    
+     <?php if(isset($_SESSION['carrito'])):?>
+     <div class="carrito">
+        <h3>Mi Carrito</h3>
+        <ul class="carrito">
+            <?php $stats = Utils::statsCarrito();?>
+            <li><a href="<?=base_url?>carrito/index">Productos (<?=$stats['count']?>) units (<?=$stats['unidades']?>)</a></li>
+            <li><a href="<?=base_url?>carrito/index">Total <?=$stats['total']?> $</a></li>
+            
+        </ul>
+     </div>
+     <?php endif; ?>
      <div id="login" class="block_aside">
          <?php if (!isset($_SESSION['identity'])) : ?>
              <h3>Entrar a la web</h3>
@@ -23,12 +33,12 @@
          <?php endif; ?>
          <ul>
          <?php if(isset($_SESSION['admin'])):?>
-             <li><a href="<?=base_url?>categoria/index">gestionar categorias</a></li>
-             <li><a href="<?=base_url?>productos/gestion">gestionar productos</a></li>
-             <li><a href="#">gestionar pedidos</a></li>
+             <li><a href="<?=base_url?>categoria/index">Gestionar categorias</a></li>
+             <li><a href="<?=base_url?>productos/gestion">Gestionar productos</a></li>
+             <li><a href="#">Gestionar pedidos</a></li>
         <?php endif; ?>
         <?php if(isset($_SESSION['identity'])):?>
-             <li><a href="#">mis pedidos</a></li>
+             <li><a href="#">Mis pedidos</a></li>
              <li><a href="<?=base_url?>usuario/logout">Cerrar Session</a></li>
         <?php endif; ?>
          </ul>

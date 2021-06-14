@@ -29,6 +29,9 @@
                         <a href="<?=base_url?>categoria/ver&id=<?=$cat->id?>" ><?=ucfirst($cat->nombre)?></a>
                     </li>
                <?php endwhile; ?>
+               <li>
+                    <a href="<?=base_url?>contacto/index" >Contacto</a>
+                </li>
                 
             </ul>
         </nav>
