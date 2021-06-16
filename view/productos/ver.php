@@ -17,7 +17,7 @@
               </div>
           </div>
       <?php else : ?>
-          <h1>No hay productos disponibles en esta categoria </h1>
+          <h1 class="carrito_logueo">No hay productos disponibles en esta categoria </h1>
       <?php endif; ?>
   </div>
   

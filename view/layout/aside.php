@@ -1,6 +1,5 @@
  <!--SIDEBAR-->
  <aside id="lateral">
-     <?php if(isset($_SESSION['carrito'])):?>
      <div class="carrito">
         <h3>Mi Carrito</h3>
         <ul class="carrito">
@@ -10,7 +9,7 @@
             
         </ul>
      </div>
-     <?php endif; ?>
+  
      <div id="login" class="block_aside">
          <?php if (!isset($_SESSION['identity'])) : ?>
              <h3>Entrar a la web</h3>

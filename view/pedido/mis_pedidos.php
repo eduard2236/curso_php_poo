@@ -4,7 +4,13 @@
 <h1>Mis pedidos</h1>
 <?php endif ;?>
 
-<?php if(isset($pedidos) && $pedidos != null ):?>
+<?php if(is_object($resultado)){
+    $result = $resultado->usuarios_id ;
+} ?>
+<?php $usuario = $_SESSION['identity'];?>
+
+
+<?php if(isset($result) && $result == $usuario->id) :?>
 <table>
     <tr>
         <th>Nº Pedido</th>
@@ -32,5 +38,5 @@
        <?php endwhile ?>             
 </table>
 <?php else: ?>
-    <h3>No tiene pedidos efectuados, realice una compra para visualizar un pedido y su detalle</h3>
+    <h3 class="carrito_logueo">No tiene pedidos efectuados, realice una compra para visualizar un pedido y su detalle</h3>
 <?php endif; ?>

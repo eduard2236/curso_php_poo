@@ -36,6 +36,7 @@
                 
                 if($save && $save_pivote && $bajar){
                     $_SESSION['pedido'] = 'complete';
+                    unset($_SESSION['carrito']);
                 }else{
                     $_SESSION['pedido'] = 'failed';
                 }
@@ -74,6 +75,9 @@
             $pedido = new pedido();
             $pedido->setUsuarios_id($usuario_id);
             $pedidos = $pedido->getAllByuser();
+            $resultado = $pedido->getEncargo($usuario_id);
+            //var_dump($resultado);
+            //die;
             require_once'view/pedido/mis_pedidos.php';
         }
 
@@ -102,9 +106,11 @@
 
         public function gestion(){
             utils::isAdmin();
+            $usuario_id = $_SESSION['identity']->id;
             $gestion = true;
             $pedido = new pedido();
             $pedidos = $pedido->getAll();
+            $resultado = $pedido->getEncargo($usuario_id);
             require_once'view/pedido/mis_pedidos.php';
         }
 

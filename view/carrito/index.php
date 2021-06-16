@@ -49,5 +49,5 @@
     <a href="<?=base_url?>pedidos/hacer" class="button button-pedido">Efectuar Pedido</a>
 </div>
         <?php else : ?> 
-        <h3>No hay productos en el carrito</h3>
+        <h3 class="carrito_logueo">No hay productos en el carrito</h3>
        <?php endif; ?>

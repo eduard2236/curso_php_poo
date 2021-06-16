@@ -21,5 +21,5 @@
 </form>
 <?php else: ?>
 <h1>Debes estar identificado</h1>
-<p>Necesitas estar logueado en la web para poder realizar tu pedido</p>
+<p class="carrito_logueo">Necesitas estar logueado en la web para poder realizar tu pedido</p>
 <?php endif ; ?>

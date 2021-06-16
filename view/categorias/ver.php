@@ -1,7 +1,7 @@
 
-                <h1> <?= $categori->nombre?> </h1>
+                <h1> <?= ucfirst($categori->nombre)?> </h1>
                 <?php if($productos->num_rows == 0 ) :?>
-                    <h1>No hay productos disponibles en esta categoria </h1>
+                    <h1 class="carrito_logueo">No hay productos disponibles en esta categoria </h1>
                 <?php else :?>
                 <?php while($produ = $productos->fetch_object()) : ?>
                 <div class="product">

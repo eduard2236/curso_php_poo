@@ -155,7 +155,11 @@ class pedido
         return $productos;
     }
 
-
+    public function getEncargo($id){
+        $sql = "SELECT usuarios_id FROM pedidos WHERE usuarios_id = {$id} AND id >= 1";
+        $resultado = $this->db->query($sql);
+        return $resultado->fetch_object();
+    }
     public function save()
     {
 
