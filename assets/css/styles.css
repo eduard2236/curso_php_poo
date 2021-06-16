@@ -300,7 +300,7 @@ textarea{
  }
 
  .button-red{
-     background: #a12211;
+    background: #a12211;
     border: 1px solid #cf1717;
     width: 50%;
  }
@@ -373,6 +373,23 @@ textarea{
      float: right;
      text-align: center;
  }
+
+ .delete-carrito{
+    display: block;
+    width: 250px !important;
+    float: left;
+    text-align: center;
+ }
+
+ .button-carrito{
+     text-decoration: none;
+ }
+
+ .button-carrito2{
+    margin-left: 40px;
+    padding-left: 0%;
+    padding-right: 0%
+}
 /*Productos*/
 
 .product{

@@ -140,6 +140,13 @@ class pedido
         return $pedido->fetch_object();
     }
 
+    public function getAllByuser()
+    {
+        $sql = "SELECT p.* FROM pedidos p WHERE p.usuarios_id = {$this->getUsuarios_id()} ORDER BY id DESC ";
+        $pedido = $this->db->query($sql);
+        return $pedido;
+    }
+
     public function getProductosByPedido($id)
     {
         //$sql = "SELECT * FROM productos WHERE id IN (SELECT producto_id FROM pedidos_productos WHERE pedido_id = {$id});";
@@ -180,4 +187,39 @@ class pedido
         }
         return $result;
     }
+
+    public function bajar_stok(){
+        
+        foreach($_SESSION['carrito'] as $elemento){
+            $producto = $elemento['producto'];
+            $insert = "UPDATE productos SET stock = stock - {$elemento['unidades']} WHERE id = {$producto->id}";
+            
+            $save = $this->db->query($insert);
+        }
+
+        $result = false;
+        if ($save) {
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function updateStatus(){
+        
+        $sql = "UPDATE pedidos SET situacion='{$this->getSituacion()}' WHERE id ={$this->getId()};";
+       
+        $save = $this->db->query($sql); 
+        $result= false;
+        if($save){
+            $result= true;
+        }
+        return $result;
+    }
+
+    public function DateUsuarios($id){
+        $sql="SELECT u.nombre, u.apellidos from usuarios u INNER JOIN pedidos p ON u.id= p.usuarios_id WHERE p.id ={$id}";
+        $save = $this->db->query($sql); 
+        return $save;
+    }
+
 }

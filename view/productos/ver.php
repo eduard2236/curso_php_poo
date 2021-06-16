@@ -1,12 +1,12 @@
   <div id="modal1">
       <?php if (isset($pro)) : ?>
           <div id="product-detail">
-              <h1> <?= $pro->nombre ?> </h1>
+              <h1> <?= ucfirst($pro->nombre) ?> </h1>
               <div class="image">
                   <?php if ($pro->imagen != null) : ?>
                       <img src="<?= base_url ?>./uploads/images/<?= $pro->imagen ?>" alt="imagen <?= $pro->nombre ?>">
                   <?php else : ?>
-                      <img src="<?= base_url ?>assets/img/camiseta.png" alt="imagen <?= $pro->nombre ?>">
+                      <img src="<?= base_url ?>assets/img/camiseta.png" alt="imagen <?= ucfirst($pro->nombre) ?>">
                   <?php endif; ?>
               </div>
               <div class="data">

@@ -10,7 +10,7 @@
 <form action="<?= $url_action ?>" method="POST" enctype="multipart/form-data">
 
     <label for="nombre" style="margin-bottom: 10px;">Nombre</label>
-    <input type="text" name="nombre" style="margin-top: 10px;" value="<?=isset($pro) && is_object($pro) ? $pro->nombre : ''; ?>"/>
+    <input type="text" name="nombre" style="margin-top: 10px;" value="<?=isset($pro) && is_object($pro) ? $pro->nombre : ''; ?>" maxlength="24"/>
 
     <label for="descripcion" >descripcion</label>
     <textarea name="descripcion" ><?=isset($pro) && is_object($pro) ? $pro->descripcion : ''; ?></textarea>

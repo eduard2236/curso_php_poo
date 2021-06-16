@@ -40,7 +40,7 @@
         }
 
         public function getCategoria(){
-            $producto = $this->db->query("SELECT p.nombre, p.precio, p.imagen, p.id , c.nombre as 'categoria' FROM productos p INNER JOIN categorias c on p.categorias_id = c.id where c.id= '{$this->getId()}'");
+            $producto = $this->db->query("SELECT p.nombre, p.precio, p.imagen, p.id , c.nombre as 'categoria' FROM productos p INNER JOIN categorias c on p.categorias_id = c.id where c.id= '{$this->getId()}' AND p.stock > 0 ");
             return $producto;
         }
 

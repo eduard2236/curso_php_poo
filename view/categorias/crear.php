@@ -3,7 +3,7 @@
 <form action="<?= base_url ?>categoria/save" method="POST">
     <label for="nombre" style="margin-bottom: 10px;">Nombre</label>
     <?php if(isset($_SESSION['categoria']) ?? $_SESSION['categoria'] == "failed_num") :?>
-        <strong class="alert_red"> el nombre de la categoria no es aceptado intente nuevamente</strong>
+        <strong class="alert_red"> El nombre de la categoria no es aceptado intente nuevamente</strong>
     <?php endif; ?>
     <input type="text" name="nombre" style="margin-top: 10px;" />
     <div style="text-align: center; margin-top: 20px">

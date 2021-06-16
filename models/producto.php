@@ -213,7 +213,7 @@ class producto
     }
 
     public function getRandon($limit){
-        $producto = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit");
+        $producto = $this->db->query("SELECT * FROM productos WHERE stock > 0 ORDER BY RAND() LIMIT $limit");
         return $producto;
     }
 

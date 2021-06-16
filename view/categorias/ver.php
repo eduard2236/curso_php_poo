@@ -11,7 +11,7 @@
                     <?php else: ?>
                         <img src="<?=base_url?>assets/img/camiseta.png" alt="imagen <?=$produ->nombre?>">
                     <?php endif ;?>
-                    <h2><?= $produ->nombre ?></h2>
+                    <h2><?=ucfirst($produ->nombre)?></h2>
                     </a>
                     <p><?= $produ->precio?> $</p>
                     <a href="<?=base_url?>carrito/add&id=<?=$produ->id?>" class="button">Comprar</a>
